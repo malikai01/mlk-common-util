@@ -12,6 +12,11 @@ import java.lang.reflect.Type;
 import java.util.Date;
 import java.util.Map;
 
+/**
+ *
+ * @author malikai
+ * @date 2021-6-2 15:54
+ */
 public class JsonUtil implements java.io.Serializable {
 
     private static final long serialVersionUID = -8872078079583695100L;

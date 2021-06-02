@@ -2,6 +2,11 @@ package com.mlk.util.invoke.exception;
 
 import java.util.Arrays;
 
+/**
+ *
+ * @author malikai
+ * @date 2021-6-2 15:49
+ */
 public class AppException extends RuntimeException {
 
     private static final long serialVersionUID = 8688953989589840707L;

@@ -13,9 +13,8 @@ import org.springframework.util.MultiValueMap;
 import java.util.Arrays;
 
 /**
- * @Author: dylan
- * @Date: 2019-02-15 12:36
- * @Desc:
+ * @author malikai
+ * @date 2021-6-2 15:55
  */
 public class HttpResponseWrapperImpl implements HttpResponseWrapper {
     private final Logger log = LoggerFactory.getLogger(HttpResponseWrapperImpl.class);

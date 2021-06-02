@@ -20,10 +20,6 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 学习线 HTTP 同步请求封装，包含日志、反序列化
- * <pre>
- *      modified by : lee
- *      modified date: 2019/01/11
- * </pre>
  */
 @ToString
 @Getter
@@ -210,14 +206,6 @@ public final class ClsHttpRequest {
 
     /**
      * 执行请求并反序列化为领域对象
-     *
-     * @param reference     domain object
-     * @param checkedStatus <code>true:检查soaStatus如果不等于0则抛出异常</code><code>false:不检查status</code>
-     * @return T
-     * @throws AppException checkedStatus=true 检查soaStatus如果不等于0则抛出异常
-     * @author liguo
-     * @date 2019/1/14 13:59
-     * @version 1.0.0
      **/
     public <T> T execute2Reference(TypeReference<DataResult<T>> reference, boolean checkedStatus) {
         String raw = execute();
@@ -253,13 +241,6 @@ public final class ClsHttpRequest {
 
     /**
      * 执行 http 请求, 无返回值，远程调用返回格式必须为 DataResult 格式
-     *
-     * @param checkedStatus <code>true:检查soaStatus如果不等于0则抛出AppException异常</code><code>false:不检查status</code>
-     * @return void
-     * @throws AppException
-     * @author liguo
-     * @date 2019/1/14 14:05
-     * @version 1.0.0
      **/
     public void execute2Void(boolean checkedStatus) {
 

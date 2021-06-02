@@ -14,11 +14,10 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 /**
- * 
- * @ClassName: DateUtil
- * @author xinhuang
- * @date 2017年7月12日
+ * DateUtil
  *
+ * @author malikai
+ * @date 2021-6-2 15:50
  */
 public class DateUtil {
     private static final String DATE_STRING_NOT_NULL = "The 'dateString' must not be null!";
@@ -75,8 +74,6 @@ public class DateUtil {
 
     /**
      * 取得系统当前年份
-     * 
-     * @return
      */
     public static int currentYear() {
         return DateTime.now().getYear();
@@ -84,7 +81,7 @@ public class DateUtil {
 
     /**
      * 取得当前系统日期
-     * 
+     *
      * @return
      */
     public static Date currentDate() {
@@ -93,9 +90,6 @@ public class DateUtil {
 
     /**
      * 取得系统当前日期，返回默认日期格式的字符串。
-     * 
-     * @param strFormat
-     * @return
      */
     public static String nowDate(String strFormat) {
         Assert.notNull(strFormat, DATE_STRING_NOT_NULL);
@@ -104,8 +98,6 @@ public class DateUtil {
 
     /**
      * 取得当前系统时间戳
-     * 
-     * @return
      */
     public static Timestamp currentTimestamp() {
         return new Timestamp(new DateTime().getMillis());
@@ -113,11 +105,6 @@ public class DateUtil {
 
     /**
      * 将日期字符串转换为java.util.Date对象
-     * 
-     * @param dateString
-     * @param pattern 日期格式
-     * @return
-     * @throws Exception
      */
     public static Date toDate(String dateString, String pattern) {
         Assert.notNull(dateString, DATE_STRING_NOT_NULL);
@@ -127,10 +114,6 @@ public class DateUtil {
 
     /**
      * 将日期字符串转换为java.util.Date对象
-     *
-     * @param dateString example:"2017-05-03T15:11:45.7009265+08:00"
-     * @return
-     * @throws Exception
      */
     public static Date toISODate(String dateString) {
         Assert.notNull(dateString, DATE_STRING_NOT_NULL);
@@ -139,10 +122,6 @@ public class DateUtil {
 
     /**
      * 将日期字符串转换为java.util.Date对象，使用默认日期格式
-     *
-     * @param dateString
-     * @return
-     * @throws Exception
      */
     public static Date toDate(String dateString) {
         Assert.notNull(dateString, DATE_STRING_NOT_NULL);
@@ -151,10 +130,6 @@ public class DateUtil {
 
     /**
      * 将时间字符串转换为java.util.Date对象
-     *
-     * @param dateString
-     * @return
-     * @throws Exception
      */
     public static Date toDateTime(String dateString) {
         Assert.notNull(dateString, DATE_STRING_NOT_NULL);
@@ -163,10 +138,6 @@ public class DateUtil {
 
     /**
      * 将java.util.Date对象转换为字符串
-     *
-     * @param date
-     * @param pattern
-     * @return
      */
     public static String toDateString(Date date, String pattern) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -176,9 +147,6 @@ public class DateUtil {
 
     /**
      * 将java.util.Date对象转换为字符串，使用默认日期格式
-     *
-     * @param date
-     * @return
      */
     public static String toDateString(Date date) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -187,9 +155,6 @@ public class DateUtil {
 
     /**
      * 将java.util.Date对象转换为时间字符串，使用默认日期格式
-     *
-     * @param date
-     * @return
      */
     public static String toDateTimeString(Date date) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -198,10 +163,6 @@ public class DateUtil {
 
     /**
      * 日期相减
-     *
-     * @param date
-     * @param days
-     * @return
      */
     public static Date diffDate(Date date, Integer days) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -212,10 +173,6 @@ public class DateUtil {
 
     /**
      * 返回毫秒
-     *
-     * @param date 日期
-     * @return 返回毫秒
-     * @author doumingjun create 2007-04-07
      */
     public static long getMillis(Date date) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -224,11 +181,6 @@ public class DateUtil {
 
     /**
      * 日期相加
-     *
-     * @param date 日期
-     * @param days 天数
-     * @return 返回相加后的日期
-     * @author doumingjun create 2007-04-07
      */
     public static Date addDate(Date date, Integer days) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -238,11 +190,6 @@ public class DateUtil {
 
     /**
      * 日期增加年数
-     *
-     * @param date
-     * @param years
-     * @return
-     * @author zhf
      */
     public static Date addYear(Date date, Integer years) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -252,11 +199,6 @@ public class DateUtil {
 
     /**
      * 日期增加月数
-     *
-     * @param date
-     * @param months
-     * @return
-     * @author zhf
      */
     public static Date addMonth(Date date, Integer months) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -266,11 +208,6 @@ public class DateUtil {
 
     /**
      * 日期增加小时
-     *
-     * @param date
-     * @param hours
-     * @return
-     * @author zhf
      */
     public static Date addHours(Date date, Integer hours) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -280,11 +217,6 @@ public class DateUtil {
 
     /**
      * 日期增加分钟
-     *
-     * @param date
-     * @param minutes
-     * @return
-     * @author zhf
      */
     public static Date addMinutes(Date date, Integer minutes) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -294,11 +226,6 @@ public class DateUtil {
 
     /**
      * 日期增加秒
-     *
-     * @param date
-     * @param seconds
-     * @return
-     * @author zhf
      */
     public static Date addSeconds(Date date, Integer seconds) {
         Assert.notNull(date, DATE_NOT_NULL);
@@ -308,10 +235,6 @@ public class DateUtil {
 
     /**
      * 根据季度获得相应的月份
-     *
-     * @param quarters 季度
-     *
-     * @return 返回相应的月份
      */
     public static String getMonth(String quarters) {
         Assert.notNull(quarters, "The 'quarters' must not be null!");
@@ -328,10 +251,6 @@ public class DateUtil {
 
     /**
      * 根据月份获得相应的季度
-     *
-     * @param month 月份
-     *
-     * @return 返回相应的季度
      */
     public static String getQuarters(String month) {
         Assert.notNull(month, "The 'month' must not be null!");
@@ -354,9 +273,6 @@ public class DateUtil {
 
     /**
      * 获取日期所在星期的第一天，这里设置第一天为星期日
-     *
-     * @param datestr
-     * @return
      */
     public static String getFirstDateOfWeek(String datestr) {
         Assert.notNull(datestr, DATE_STRING_NOT_NULL);
@@ -366,9 +282,6 @@ public class DateUtil {
 
     /**
      * 获取日期所在当年的第几周
-     *
-     * @param datestr
-     * @return
      */
     public static int getWeekOfYear(String datestr) {
         Assert.notNull(datestr, DATE_STRING_NOT_NULL);
@@ -377,9 +290,6 @@ public class DateUtil {
 
     /**
      * 通过日期字符串yyyy-MM-dd HH:mm:ss 获取星期
-     *
-     * @param datestr
-     * @return
      */
     public static String getWeekday(String datestr) {
         Assert.notNull(datestr, DATE_STRING_NOT_NULL);

@@ -51,7 +51,8 @@ import static io.netty.util.internal.PlatformDependent.throwException;
 /**
  * HtpClient4.0封装
  *
- * @author huangxin
+ * @author malikai
+ * @date 2021-6-2 15:52
  */
 @Slf4j
 public class HttpClientUtil extends TransferSlowLogger {
@@ -139,7 +140,7 @@ public class HttpClientUtil extends TransferSlowLogger {
      */
     public static String sendHttpsGetByRetry(String httpUrl, long timeout, TimeUnit timeUnit, int retryCount,
                                              Header... header) {
-        HttpGet httpGet = new HttpGet(httpUrl);// 创建get请求
+        HttpGet httpGet = new HttpGet(httpUrl);
         if (header != null) {
             httpGet.setHeaders(header);
         }
@@ -177,7 +178,7 @@ public class HttpClientUtil extends TransferSlowLogger {
      */
     public static String sendHttpPostByRetry(String httpUrl, String jsonStr, long timeout, TimeUnit timeUnit,
                                              int retryCount, Header... header) {
-        HttpPost httpPost = new HttpPost(httpUrl);// 创建httpPost
+        HttpPost httpPost = new HttpPost(httpUrl);
         try {
             // 设置参数
             StringEntity stringEntity = new StringEntity(jsonStr, "UTF-8");
@@ -199,7 +200,7 @@ public class HttpClientUtil extends TransferSlowLogger {
      */
     public static String sendHttpPostByRetry(String httpUrl, long timeout, TimeUnit timeUnit, int retryCount,
                                              Header... header) {
-        HttpPost httpPost = new HttpPost(httpUrl);// 创建httpPost
+        HttpPost httpPost = new HttpPost(httpUrl);
         if (header != null) {
             httpPost.setHeaders(header);
         }
@@ -234,7 +235,7 @@ public class HttpClientUtil extends TransferSlowLogger {
      */
     public static String sendHttpDeleteByRetry(String httpUrl, long timeout, TimeUnit timeUnit, int retryCount,
                                                Header... headers) {
-        HttpDelete httpDelete = new HttpDelete(httpUrl);// 创建httpDete
+        HttpDelete httpDelete = new HttpDelete(httpUrl);
         if (headers != null) {
             httpDelete.setHeaders(headers);
         }
@@ -248,7 +249,7 @@ public class HttpClientUtil extends TransferSlowLogger {
      */
     public static String sendHttpDeleteByRetry(String httpUrl, String jsonStr, long timeout, TimeUnit timeUnit,
                                                int retryCount, Header... headers) {
-        HttpDelete httpDelete = new HttpDelete(httpUrl);// 创建httpDete
+        HttpDelete httpDelete = new HttpDelete(httpUrl);
         try {
             // 设置参数
             StringEntity stringEntity = new StringEntity(jsonStr, "UTF-8");

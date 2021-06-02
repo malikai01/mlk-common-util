@@ -4,9 +4,8 @@ import org.apache.http.Header;
 import org.springframework.util.MultiValueMap;
 
 /**
- * @Author: dylan
- * @Date: 2019-02-16 22:25
- * @Desc:
+ * @author malikai
+ * @date 2021-6-2 15:55
  */
 public interface HttpResponseWrapper {
 

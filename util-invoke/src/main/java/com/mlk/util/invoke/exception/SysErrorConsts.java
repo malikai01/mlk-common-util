@@ -1,9 +1,9 @@
 package com.mlk.util.invoke.exception;
 
 /**
- * 
- * @author huangxin
  *
+ * @author malikai
+ * @date 2021-6-2 15:50
  */
 public class SysErrorConsts {
 

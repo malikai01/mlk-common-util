@@ -13,12 +13,10 @@ import java.nio.charset.Charset;
 import static org.springframework.web.context.request.RequestAttributes.SCOPE_REQUEST;
 
 /**
- * @Author: lee
- * @version:1.0.0
- * @Date: 2019/1/11 17:23
- **/
+ * @author malikai
+ * @date 2021-6-2 15:53
+ */
 public class InnerUtil {
-    private static final Logger LOGGER = LoggerFactory.getLogger(InnerUtil.class);
 
     private InnerUtil() {
 
@@ -39,11 +37,6 @@ public class InnerUtil {
 
     /**
      * 获取http context 对象
-     *
-     * @return javax.servlet.http.HttpServletRequest
-     * @author liguo
-     * @date 2018/12/19 20:04
-     * @version 1.0.0
      **/
     public static HttpServletRequest getRequestContext() {
         try {
@@ -56,12 +49,6 @@ public class InnerUtil {
 
     /**
      * 获取head value
-     *
-     * @param key
-     * @return T
-     * @author liguo
-     * @date 2019/1/15 11:10
-     * @version 1.0.0
      **/
     @SuppressWarnings("unchecked")
     public static <T> T getHead(String key, String defaultVal) {
@@ -75,12 +62,6 @@ public class InnerUtil {
 
     /**
      * 获取http context 对象
-     *
-     * @return org.springframework.web.context.request.ServletRequestAttributes
-     * @throws RuntimeException ServletRequestAttributes 为空null时抛出该异常
-     * @author liguo
-     * @date 2019/1/11 19:54
-     * @version 1.0.0
      **/
     public static ServletRequestAttributes getRequestAttributes() {
         ServletRequestAttributes attributes = null;
@@ -97,13 +78,6 @@ public class InnerUtil {
 
     /**
      * 获取当前请求上下文对象
-     *
-     * @param key
-     * @param defaultVal
-     * @return T
-     * @author liguo
-     * @date 2019/1/11 19:59
-     * @version 1.0.0
      **/
     @SuppressWarnings("unchecked")
     public static <T> T getContextObject(String key, T defaultVal) {
@@ -118,12 +92,6 @@ public class InnerUtil {
 
     /**
      * getReqApiHost
-     *
-     * @param reqUrl
-     * @return java.lang.String
-     * @author liguo
-     * @date 2019/1/14 17:33
-     * @version 1.0.0
      **/
     public static String getReqApiHost(String reqUrl) {
         if (Strings.isNullOrEmpty(reqUrl)) {
@@ -137,15 +105,6 @@ public class InnerUtil {
      * <pre>
      *     返回的子字符窜长度小于等于len
      * </pre>
-     *
-     * @param str
-     * @param start
-     * @param len
-     * @param suffix
-     * @return java.lang.String
-     * @author liguo
-     * @date 2018/12/29 11:27
-     * @version 1.0.0
      **/
     public static String subString(String str, int start, int len, String suffix) {
 

@@ -6,7 +6,10 @@ import org.slf4j.MDC;
 
 import java.util.Date;
 
-
+/**
+ * @author malikai
+ * @date 2021-6-2 15:55
+ */
 public class TransferSlowLogger {
     
     protected TransferSlowLogger(){}

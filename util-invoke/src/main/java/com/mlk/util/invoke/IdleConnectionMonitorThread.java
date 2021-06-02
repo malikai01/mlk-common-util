@@ -4,6 +4,10 @@ import org.apache.http.conn.HttpClientConnectionManager;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author malikai
+ * @date 2021-6-2 15:55
+ */
 public class IdleConnectionMonitorThread extends Thread {
 
         private final HttpClientConnectionManager connMgr;

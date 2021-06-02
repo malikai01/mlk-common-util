@@ -2,6 +2,11 @@ package com.mlk.util.invoke.exception;
 
 import java.util.Arrays;
 
+/**
+ *
+ * @author malikai
+ * @date 2021-6-2 15:50
+ */
 public class SysException extends RuntimeException {
 
     private static final long serialVersionUID = 3116483353040779859L;

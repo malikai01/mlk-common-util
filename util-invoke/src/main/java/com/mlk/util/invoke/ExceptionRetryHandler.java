@@ -17,69 +17,72 @@ import java.io.IOException;
 import java.net.UnknownHostException;
 
 /**
- * Created by xinhuang on 2017/8/17.
+ * @author malikai
+ * @date 2021-6-2 15:55
  */
 @Contract(threading = ThreadingBehavior.IMMUTABLE)
 public class ExceptionRetryHandler implements HttpRequestRetryHandler {
 
     private final Logger log = LoggerFactory.getLogger(ExceptionRetryHandler.class);
-    
-    
-    /** the number of times a method will be retried */
+
+
+    /**
+     * the number of times a method will be retried
+     */
     private int retryCount = 5;
-    
+
     private boolean isConnResetRetry;
     private boolean isConnTimeoutRetry;
-    
+
     private static final String CONNECTION_RESET_MSG = "Connection reset";
     private static final String CONNECTION_TIEMOUT_MSG = "Connection timed out";
     private static final String NOHTTPRESPONSEEXCEPTION_MSG = "NoHttpResponseException";
     private static final String UNKNOWNHOSTEXCEPTION = "UnknownHostException";
-    
-    public ExceptionRetryHandler(int retryCount, boolean isConnResetRetry, boolean isConnTimeoutRetry){
+
+    public ExceptionRetryHandler(int retryCount, boolean isConnResetRetry, boolean isConnTimeoutRetry) {
         this.retryCount = retryCount;
         this.isConnResetRetry = isConnResetRetry;
         this.isConnTimeoutRetry = isConnTimeoutRetry;
     }
-    
-    
+
+
     @Override
     public boolean retryRequest(IOException exception, int executionCount, HttpContext context) {
         if (executionCount >= retryCount) {
             return false;
         }
-        
-       
-        if(exception instanceof NoHttpResponseException){
+
+
+        if (exception instanceof NoHttpResponseException) {
             showLog(exception, executionCount, context, log, NOHTTPRESPONSEEXCEPTION_MSG);
             return true;
         }
-        
-        if(exception instanceof UnknownHostException){
-        	showLog(exception, executionCount, context, log, UNKNOWNHOSTEXCEPTION);
-        	return true;
+
+        if (exception instanceof UnknownHostException) {
+            showLog(exception, executionCount, context, log, UNKNOWNHOSTEXCEPTION);
+            return true;
         }
-        
-        if(this.isConnResetRetry){
+
+        if (this.isConnResetRetry) {
             String message = exception.getMessage();
-            if(message != null && message.contains(CONNECTION_RESET_MSG)){
+            if (message != null && message.contains(CONNECTION_RESET_MSG)) {
                 showLog(exception, executionCount, context, log, CONNECTION_RESET_MSG);
                 return true;
             }
         }
-        
-        if(this.isConnTimeoutRetry){
+
+        if (this.isConnTimeoutRetry) {
             String message = exception.getMessage();
-            if(message != null && message.contains(CONNECTION_TIEMOUT_MSG)){
+            if (message != null && message.contains(CONNECTION_TIEMOUT_MSG)) {
                 showLog(exception, executionCount, context, log, CONNECTION_TIEMOUT_MSG);
                 return true;
             }
         }
-        
+
         return false;
     }
-    
-    private void showLog(IOException exception, int executionCount, HttpContext context, Logger log, String retryMsg){
+
+    private void showLog(IOException exception, int executionCount, HttpContext context, Logger log, String retryMsg) {
         final HttpClientContext clientContext = HttpClientContext.adapt(context);
         HttpRequest request = clientContext.getRequest();
         RequestLine rl = request.getRequestLine();
@@ -87,9 +90,8 @@ public class ExceptionRetryHandler implements HttpRequestRetryHandler {
                 MDC.get(SysRestConsts.REQUEST_ID), rl.getMethod(), rl.getUri(), executionCount,
                 exception.getMessage());
     }
-    
-    
-    
+
+
     /**
      * @return the maximum number of times a method will be retried
      */

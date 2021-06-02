@@ -22,7 +22,8 @@ import java.util.regex.Pattern;
 /**
  * spring中获取资源文件
  *
- * @author huangxin
+ * @author malikai
+ * @date 2021-6-2 15:49
  */
 public class BaseProperties extends PropertyOverrideConfigurer {
 

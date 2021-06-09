@@ -22,7 +22,7 @@ public class ReqDuplicateHelper {
      * @param excludeKeys 请求参数里面要去除哪些字段再求摘要
      * @return 去除参数的MD5摘要
      */
-    public String DupParamMD5(final String reqJSON, String... excludeKeys) {
+    public String dupParamMD5(final String reqJSON, String... excludeKeys) {
 
         TreeMap paramTreeMap = JSON.parseObject(reqJSON, TreeMap.class);
         if (excludeKeys!=null) {
@@ -67,13 +67,13 @@ public class ReqDuplicateHelper {
                 "}";
 
         //全参数比对，所以两个参数MD5不同
-        String dedupMD5 = new ReqDuplicateHelper().DupParamMD5(req);
-        String dedupMD52 = new ReqDuplicateHelper().DupParamMD5(req2);
+        String dedupMD5 = new ReqDuplicateHelper().dupParamMD5(req);
+        String dedupMD52 = new ReqDuplicateHelper().dupParamMD5(req2);
         System.out.println("req1MD5 = "+ dedupMD5+" , req2MD5="+dedupMD52);
 
         //去除时间参数比对，MD5相同
-        String dedupMD53 = new ReqDuplicateHelper().DupParamMD5(req,"requestTime");
-        String dedupMD54 = new ReqDuplicateHelper().DupParamMD5(req2,"requestTime");
+        String dedupMD53 = new ReqDuplicateHelper().dupParamMD5(req,"requestTime");
+        String dedupMD54 = new ReqDuplicateHelper().dupParamMD5(req2,"requestTime");
         System.out.println("req1MD5 = "+ dedupMD53+" , req2MD5="+dedupMD54);
     }
 }

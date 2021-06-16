@@ -9,6 +9,7 @@ import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 
 /**
@@ -226,5 +227,17 @@ public class FileUtils {
         } catch (Exception e) {
             log.error("修改文件{}的前两个字节失败!", filePath);
         }
+    }
+
+    /**
+     * 字符串转二进制
+     *
+     * @param str
+     * @return byte[]
+     * @author malikai
+     * @date 2021-6-16 10:56
+     */
+    public static byte[] parseStr2Byte(String str) {
+        return str.getBytes(StandardCharsets.UTF_8);
     }
 }

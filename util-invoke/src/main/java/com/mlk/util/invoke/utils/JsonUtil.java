@@ -9,8 +9,11 @@ import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
 import java.lang.reflect.Type;
+import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -110,5 +113,11 @@ public class JsonUtil implements java.io.Serializable {
             return new byte[0];
         }
         return JSON.toJSONBytes(t, SerializerFeature.WriteClassName);
+    }
+
+    public static String format(String pattern, Object... arguments) {
+        Object[] args =
+                Arrays.stream(arguments).map(x -> x==null?"":x.toString()).collect(Collectors.toList()).toArray();
+        return MessageFormat.format(pattern, args);
     }
 }

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mlk-common-util.iml" filepath="$PROJECT_DIR$/mlk-common-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/util-authorization/util-authorization.iml" filepath="$PROJECT_DIR$/util-authorization/util-authorization.iml" />
       <module fileurl="file://$PROJECT_DIR$/util-datascope/util-datascope.iml" filepath="$PROJECT_DIR$/util-datascope/util-datascope.iml" />
       <module fileurl="file://$PROJECT_DIR$/util-invoke/util-invoke.iml" filepath="$PROJECT_DIR$/util-invoke/util-invoke.iml" />
     </modules>

@@ -6,7 +6,8 @@
 	<modules>
 		<module>util-invoke</module>
 		<module>util-datascope</module>
-	</modules>
+        <module>util-authorization</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

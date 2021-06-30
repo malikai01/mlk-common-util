@@ -52,6 +52,10 @@ public class AESEncrypt {
         return Base64Utils.encode(secretKey.getEncoded());
     }
 
+    public static void main(String[] args) throws Exception {
+        System.out.println(getSecretKey("moan"));
+    }
+
     /**
      * <p>
      * 加密

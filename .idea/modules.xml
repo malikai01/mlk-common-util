@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/util-authorization/util-authorization.iml" filepath="$PROJECT_DIR$/util-authorization/util-authorization.iml" />
       <module fileurl="file://$PROJECT_DIR$/util-datascope/util-datascope.iml" filepath="$PROJECT_DIR$/util-datascope/util-datascope.iml" />
       <module fileurl="file://$PROJECT_DIR$/util-invoke/util-invoke.iml" filepath="$PROJECT_DIR$/util-invoke/util-invoke.iml" />
+      <module fileurl="file://$PROJECT_DIR$/util-resubmit/util-resubmit.iml" filepath="$PROJECT_DIR$/util-resubmit/util-resubmit.iml" />
     </modules>
   </component>
 </project>

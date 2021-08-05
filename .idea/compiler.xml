@@ -10,6 +10,7 @@
         <module name="util-authorization" />
         <module name="util-datascope" />
         <module name="util-invoke" />
+        <module name="util-resubmit" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
       <module name="util-authorization" target="1.8" />
       <module name="util-datascope" target="1.8" />
       <module name="util-invoke" target="1.8" />
+      <module name="util-resubmit" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

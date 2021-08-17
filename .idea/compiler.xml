@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="util-authorization" />
         <module name="util-datascope" />
         <module name="util-invoke" />
+        <module name="util-authorization" />
         <module name="util-resubmit" />
       </profile>
     </annotationProcessing>
@@ -20,5 +20,14 @@
       <module name="util-invoke" target="1.8" />
       <module name="util-resubmit" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mlk-common-util" options="" />
+      <module name="util-authorization" options="-parameters" />
+      <module name="util-datascope" options="-parameters" />
+      <module name="util-invoke" options="-parameters" />
+      <module name="util-resubmit" options="-parameters" />
+    </option>
   </component>
 </project>

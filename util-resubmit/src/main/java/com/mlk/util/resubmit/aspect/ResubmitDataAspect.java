@@ -25,7 +25,7 @@ public class ResubmitDataAspect {
 
     private final static Object PRESENT = new Object();
 
-    @Around("@annotation(com.yeshj.util.resubmit.annotation.Resubmit)")
+    @Around("@annotation(com.mlk.util.resubmit.annotation.Resubmit)")
     public Object handleResubmit(ProceedingJoinPoint joinPoint) throws Throwable {
         Method method = ((MethodSignature) joinPoint.getSignature()).getMethod();
         //获取注解信息

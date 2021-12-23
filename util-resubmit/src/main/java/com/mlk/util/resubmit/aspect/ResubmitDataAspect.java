@@ -8,8 +8,11 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,14 +31,19 @@ public class ResubmitDataAspect {
         //获取注解信息
         Resubmit annotation = method.getAnnotation(Resubmit.class);
         int delaySeconds = annotation.delaySeconds();
-        String key = "";
+        List<String> keyParams = Arrays.asList(annotation.keyParams());
+        String keyName = annotation.keyName();
         //获取参数
         Map<String, Object> requestParam = AspectjUtils.getNameAndValue(joinPoint);
         //解析参数
-        StringBuffer sb = new StringBuffer();
-        requestParam.forEach((k, v) -> sb.append(v));
+        StringBuffer sb = new StringBuffer(keyName);
+        requestParam.forEach((k, v) -> {
+            if (CollectionUtils.isEmpty(keyParams) || keyParams.contains(k)) {
+                sb.append(v).append(",");
+            }
+        });
         //生成加密参数 使用了content_MD5的加密方式
-        key = ResubmitLock.handleKey(sb.toString());
+        String key = ResubmitLock.handleKey(sb.toString());
         //执行锁
         boolean lock = false;
         try {
